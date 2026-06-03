@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Annie | Moodboard</title>
+    <style>
+        /* ==========================================================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL (Paleta Rosa y Nude)
+           ========================================================================== */
+        :root {
+            --nude-dark: #b89782;         /* Tono nude profundo para texto y bordes */
+            --nude-medium: #d6beae;       /* Nude medio elegante */
+            --nude-light: #f5ece5;        /* Fondo nude muy suave */
+            --pink-soft: #f0c2c9;         /* Rosa suave característico */
+            --pink-blush: #fae8eb;        /* Fondo rosa sumamente tierno */
+            --pure-white: #ffffff;
+            --text-dark: #3a322d;         /* Marrón oscuro para máxima legibilidad */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 90px;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN SUPERIOR (FIJA)
+           ========================================================================== */
+        .navbar {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--pure-white);
+            border-bottom: 2px solid var(--nude-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--nude-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--pink-soft);
+            border-bottom: 2px solid var(--pink-soft);
+        }
+
+        /* ==========================================================================
+           SECCIÓN HERO (ENCABEZADO DE MOODBOARD)
+           ========================================================================== */
+        .moodboard-hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--nude-medium);
+        }
+
+        .moodboard-hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .moodboard-hero p {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #5a504a;
+            margin-top: 5px;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ==========================================================================
+           CONTENEDOR PRINCIPAL Y DESCRIPCIÓN DEL CONCEPTO
+           ========================================================================== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .concept-block {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .tag {
+            color: var(--nude-dark);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .concept-block h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .concept-text {
+            font-size: 1.15rem;
+            color: #5a504a;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            line-height: 1.8;
+        }
+
+        /* Cuadrícula de los pilares del moodboard */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .pillar-card {
+            background-color: var(--pink-blush);
+            padding: 25px;
+            border-radius: 8px;
+            border-bottom: 3px solid var(--nude-medium);
+            transition: transform 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            border-bottom-color: var(--pink-soft);
+        }
+
+        .pillar-card h3 {
+            font-size: 1.1rem;
+            color: var(--nude-dark);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+        }
+
+        .pillar-card p {
+            font-size: 0.95rem;
+            color: #5a504a;
+            text-align: justify;
+        }
+
+        /* ==========================================================================
+           CONTENEDOR DE LA IMAGEN EN GRANDE (M.PNG)
+           ========================================================================== */
+        .image-display-section {
+            background-color: var(--nude-light);
+            border-top: 1px solid var(--nude-medium);
+            border-bottom: 1px solid var(--nude-medium);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .moodboard-wrapper {
+            max-width: 1050px;
+            margin: 0 auto;
+            background-color: var(--pure-white);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(184, 151, 130, 0.12);
+        }
+
+        .moodboard-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+        }
+
+        .caption-text {
+            font-size: 0.9rem;
+            color: var(--nude-dark);
+            margin-top: 15px;
+            font-style: italic;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .main-footer {
+            background-color: var(--nude-dark);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIJA) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.png" alt="Nails by Annie Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Sobre nosotros</a></li>
+                    <li><a href="catalogo.html">Referencias</a></li>
+                    <li><a href="moodboard.html" class="active">Moodboard</a></li>
+                    <li><a href="organigrama.html">Organigrama</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ENCABEZADO DEL MOODBOARD -->
+    <section class="moodboard-hero">
+        <h1>Universo Creativo</h1>
+        <p>Inspiración, texturas y la esencia de nuestro arte</p>
+    </section>
+
+    <!-- SECCIÓN DESCRIPCIÓN DEL CONCEPTO -->
+    <main class="container">
+        <div class="concept-block">
+            <span class="tag">Inspiración Estética</span>
+            <h2>¿Qué representa nuestro Moodboard?</h2>
+            <p class="concept-text">
+                Nuestro tablero de inspiración captura la armonía perfecta entre la elegancia clásica y las tendencias más audaces del nail art. Define la dirección visual de <strong>Nails by Annie</strong>, entrelazando la calidez de los tonos nudes y rosas con detalles tridimensionales, pedrería fina y toques de la cultura pop para crear diseños únicos llenos de confianza y personalidad.
+            </p>
+
+            <!-- Cuadrícula de análisis estético basado en las referencias de la marca -->
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <h3>Paleta Base</h3>
+                    <p>Dominada por la sutileza de los tonos nudes y rosas pastel, evocando limpieza, delicadeza y un lienzo estético perfecto para cualquier piel.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Estructuras</h3>
+                    <p>Formas acrílicas estilizadas y audaces, destacando las puntas cuadradas perfectas y cortes extra largos con acabados impecables.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Detalles Glam</h3>
+                    <p>Brillo tridimensional mediante la aplicación meticulosa de pedrería fina, dijes metálicos en relieve, estoperoles y marcos texturizados dorados.</p>
+                </div>
+                <div class="pillar-card">
+                    <h3>Arte Coquette</h3>
+                    <p>Incorporación de elementos gráficos tiernos y juveniles, tales como minicorazones, cerezas encapsuladas y stickers icónicos de Hello Kitty.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- SECCIÓN DE DESPLIEGUE AMPLIO PARA TU IMAGEN DE DISEÑO (M.PNG) -->
+    <section class="image-display-section">
+        <div class="moodboard-wrapper">
+            <!-- Carga el archivo m.png que armarás para este concepto -->
+            <img src="m.png" alt="Moodboard Nails by Annie - Belleza en tus manos">
+            <p class="caption-text">— Nails by Annie: Crear belleza en cada mano. —</p>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Nails by Annie — Detalles que enamoran.</p>
+    </footer>
+
+</body>
+</html>
