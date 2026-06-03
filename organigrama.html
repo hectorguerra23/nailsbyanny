@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Annie | Organigrama</title>
+    <style>
+        /* ==========================================================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL (Paleta Rosa y Nude)
+           ========================================================================== */
+        :root {
+            --nude-dark: #b89782;         /* Tono nude profundo para texto y bordes */
+            --nude-medium: #d6beae;       /* Nude medio elegante */
+            --nude-light: #f5ece5;        /* Fondo nude muy suave */
+            --pink-soft: #f0c2c9;         /* Rosa suave característico */
+            --pink-blush: #fae8eb;        /* Fondo rosa sumamente tierno */
+            --pure-white: #ffffff;
+            --text-dark: #3a322d;         /* Marrón oscuro para legibilidad */
+            --alert-gold: #dfa241;        /* Color elegante para estados en proceso */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 90px;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN SUPERIOR (FIJA)
+           ========================================================================== */
+        .navbar {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--pure-white);
+            border-bottom: 2px solid var(--nude-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--nude-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--pink-soft);
+            border-bottom: 2px solid var(--pink-soft);
+        }
+
+        /* ==========================================================================
+           SECCIÓN HERO (ENCABEZADO DE ORGANIGRAMA)
+           ========================================================================== */
+        .org-hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--nude-medium);
+        }
+
+        .org-hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .org-hero p {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #5a504a;
+            margin-top: 5px;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ==========================================================================
+           CONTENEDOR PRINCIPAL Y EXPLICACIÓN
+           ========================================================================== */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--pink-blush);
+            border: 1px solid var(--alert-gold);
+            color: #b37410;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+
+        .content-block {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .content-block h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+        }
+
+        .explanation-card {
+            background-color: var(--nude-light);
+            border-left: 5px solid var(--nude-dark);
+            padding: 30px;
+            border-radius: 4px;
+            text-align: justify;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+
+        .explanation-card p {
+            font-size: 1.05rem;
+            color: #5a504a;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .explanation-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ==========================================================================
+           CONTENEDOR DE ESPACIO RESERVADO PARA EL ESQUEMA (CON ANIMACIÓN)
+           ========================================================================== */
+        .placeholder-box {
+            border: 2px dashed var(--nude-medium);
+            background-color: #faf8f6;
+            border-radius: 12px;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .gear-icon {
+            font-size: 3.5rem;
+            color: var(--nude-dark);
+            margin-bottom: 20px;
+            animation: spin 4s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        .placeholder-box h3 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .placeholder-box p {
+            font-size: 0.95rem;
+            color: #7a6e65;
+            max-width: 500px;
+            line-height: 1.5;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .main-footer {
+            background-color: var(--nude-dark);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIJA) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.png" alt="Nails by Annie Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Sobre nosotros</a></li>
+                    <li><a href="catalogo.html">Referencias</a></li>
+                    <li><a href="moodboard.html">Moodboard</a></li>
+                    <li><a href="organigrama.html" class="active">Organigrama</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <section class="org-hero">
+        <h1>Estructura Organizacional</h1>
+        <p>Nuestro equipo y distribución de funciones</p>
+    </section>
+
+    <!-- EXPLICACIÓN Y ESTADO DE LA SECCIÓN -->
+    <main class="container">
+        <div class="content-block">
+            <span class="status-badge">Fase: En Proceso</span>
+            <h2>Distribución de Roles en Desarrollo</h2>
+            
+            <div class="explanation-card">
+                <p>
+                    Actualmente, el organigrama oficial de <strong>Nails by Annie</strong> se encuentra clasificado bajo el estado de <strong>En Proceso</strong>. Al tratarse de un emprendimiento en etapa de planeación estructural y lanzamiento de marca, el equipo fundador se encuentra operando bajo un esquema de <em>multifuncionalidad</em>, donde la administración general, el marketing digital y el control de insumos son gestionados de manera conjunta.
+                </p>
+                <p>
+                    La asignación definitiva de las plazas operativas (tales como Técnicas Aplicadoras Senior, Especialistas en Manicure Avanzado, Auxiliares de Almacén y Encargadas de Recepción) se formalizará una vez que se inicie el periodo de reclutamiento técnico y las evaluaciones presenciales en la cita de apertura. Este enfoque modular garantiza que cada puesto sea asignado bajo estrictos estándares de calidad y destreza artística.
+                </p>
+            </div>
+
+            <!-- CUADRO VISUAL QUE REEMPLAZARÁ AL GRÁFICO TEMPORALMENTE -->
+            <div class="placeholder-box">
+                <div class="gear-icon">⚙️</div>
+                <h3>Esquema Técnico en Actualización</h3>
+                <p>El diseño gráfico del organigrama estructural e interacciones departamentales se desplegará en este espacio una vez concluidas las fases de asignación de roles técnicos.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Nails by Annie — Detalles que enamoran.</p>
+    </footer>
+
+</body>
+</html>
