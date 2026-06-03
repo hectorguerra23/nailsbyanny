@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Annie | Sobre Nosotros</title>
+    <style>
+        /* ==========================================================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL (Paleta Rosa y Nude)
+           ========================================================================== */
+        :root {
+            --nude-dark: #b89782;         /* Tono nude profundo para texto y bordes */
+            --nude-medium: #d6beae;       /* Nude medio elegante */
+            --nude-light: #f5ece5;        /* Fondo nude muy suave */
+            --pink-soft: #f0c2c9;         /* Rosa suave característico */
+            --pink-blush: #fae8eb;        /* Fondo rosa sumamente tierno */
+            --pure-white: #ffffff;
+            --text-dark: #3a322d;         /* Marrón oscuro/negro suave para legibilidad */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 90px;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN SUPERIOR (FIJA) - Sin Personalización
+           ========================================================================== */
+        .navbar {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--pure-white);
+            border-bottom: 2px solid var(--nude-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Espacio reservado para tu logotipo logo.png */
+        .logo-area img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--nude-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--pink-soft);
+            border-bottom: 2px solid var(--pink-soft);
+        }
+
+        /* ==========================================================================
+           SECCIÓN HERO (BIENVENIDA)
+           ========================================================================== */
+        .hero-section {
+            background: linear-gradient(135deg, var(--pink-blush) 0%, var(--nude-light) 100%);
+            color: var(--text-dark);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--nude-medium);
+        }
+
+        .hero-section h1 {
+            font-size: 3.2rem;
+            letter-spacing: 2px;
+            color: var(--nude-dark);
+            margin-bottom: 15px;
+            font-weight: 400;
+            font-family: 'Georgia', serif; /* Un toque más estético para el rubro de belleza */
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #7a685c;
+        }
+
+        /* ==========================================================================
+           CONTENEDOR PRINCIPAL Y CONTENIDO
+           ========================================================================== */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Sobre Nosotros */
+        .about-block {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .tag {
+            color: var(--nude-dark);
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .about-block h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+        }
+
+        .about-text {
+            font-size: 1.15rem;
+            color: #5a504a;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.9;
+        }
+
+        /* Cuadrícula Misión, Visión y Tipo de Negocio */
+        .identity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .identity-card {
+            background-color: var(--pink-blush);
+            padding: 35px 25px;
+            border-radius: 8px;
+            border-bottom: 4px solid var(--nude-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .identity-card:hover {
+            transform: translateY(-5px);
+            border-bottom-color: var(--pink-soft);
+        }
+
+        .identity-card h3 {
+            font-size: 1.3rem;
+            color: var(--nude-dark);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+            font-family: 'Georgia', serif;
+        }
+
+        .identity-card p {
+            font-size: 0.98rem;
+            color: #5a504a;
+            text-align: justify;
+            line-height: 1.7;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .main-footer {
+            background-color: var(--nude-dark);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIJA) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <!-- Espacio libre para logo.png como siempre -->
+                <img src="logo.png" alt="Nails by Annie Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Sobre nosotros</a></li>
+                    <li><a href="catalogo.html">Catálogo</a></li>
+                    <li><a href="moodboard.html">Moodboard</a></li>
+                    <li><a href="organigrama.html">Organigrama</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- BIENVENIDA DE LA MARCA -->
+    <section class="hero-section">
+        <h1>Nails by Annie</h1>
+        <p>Belleza, Confianza y Satisfacción en tus manos</p>
+    </section>
+
+    <!-- CONTENIDO GENERAL SOBRE NOSOTROS -->
+    <main class="container">
+        
+        <!-- Descripción General del Negocio -->
+        <div class="about-block">
+            <span class="tag">¿Quiénes Somos?</span>
+            <h2>Pasión por el Detalle</h2>
+            <p class="about-text">
+                Nails by Annie es un negocio dedicado a brindar servicios de belleza enfocados en el cuidado, decoración y embellecimiento de uñas, ofreciendo atención profesional y diseños personalizados.
+            </p>
+        </div>
+
+        <!-- Misión, Visión y Tipo de Negocio -->
+        <div class="identity-grid">
+            
+            <div class="identity-card">
+                <h3>Misión</h3>
+                <p>“Nuestra empresa busca Crear belleza en cada mano. Ofrecer servicios de uñas y manicure de alta calidad, utilizando materiales seguros y modernos para brindar a cada cliente una experiencia de belleza, confianza y satisfacción mediante una atención amable y personalizada.”</p>
+            </div>
+
+            <div class="identity-card">
+                <h3>Visión</h3>
+                <p>“Convertirse en uno de los negocios de uñas reconocido y recomendados en Reynosa, destacando en los stands del plantel por la creatividad, calidad de servicio y atención al cliente.”</p>
+            </div>
+
+            <div class="identity-card">
+                <h3>Tipo de Negocio</h3>
+                <p>Empresa de servicios estéticos enfocada en uñas acrílicas, manicure y decoración de uñas. Nos distinguimos por la implementación de técnicas higiénicas y un catálogo artístico en constante innovación.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Nails by Annie — Detalles que enamoran.</p>
+    </footer>
+
+</body>
+</html>
