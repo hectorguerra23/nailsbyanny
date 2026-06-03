@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nails by Annie | Referencias</title>
+    <style>
+        /* ==========================================================================
+           VARIABLES Y CONFIGURACIÓN GLOBAL (Paleta Rosa y Nude)
+           ========================================================================== */
+        :root {
+            --nude-dark: #b89782;         /* Tono nude profundo para texto y bordes */
+            --nude-medium: #d6beae;       /* Nude medio elegante */
+            --nude-light: #f5ece5;        /* Fondo nude muy suave */
+            --pink-soft: #f0c2c9;         /* Rosa suave característico */
+            --pink-blush: #fae8eb;        /* Fondo rosa sumamente tierno */
+            --pure-white: #ffffff;
+            --text-dark: #3a322d;         /* Marrón oscuro para legibilidad */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--pure-white);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-top: 90px;
+        }
+
+        /* ==========================================================================
+           BARRA DE NAVEGACIÓN SUPERIOR (FIJA)
+           ========================================================================== */
+        .navbar {
+            width: 100%;
+            height: 90px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: var(--pure-white);
+            border-bottom: 2px solid var(--nude-light);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-area img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--nude-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            color: var(--pink-soft);
+            border-bottom: 2px solid var(--pink-soft);
+        }
+
+        /* ==========================================================================
+           SECCIÓN HERO (ENCABEZADO DE REFERENCIAS)
+           ========================================================================== */
+        .catalog-hero {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 70px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--nude-medium);
+        }
+
+        .catalog-hero h1 {
+            font-size: 3rem;
+            letter-spacing: 2px;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+        }
+
+        .catalog-hero p {
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #5a504a;
+            margin-top: 5px;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+        }
+
+        /* ==========================================================================
+           GALERÍA DE REFERENCIAS (ESTILO CUADRÍCULA)
+           ========================================================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .gallery-intro {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .gallery-intro h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .gallery-intro p {
+            font-size: 1.05rem;
+            color: #6e6158;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .nail-card {
+            background-color: var(--pure-white);
+            border: 1px solid var(--nude-light);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(184, 151, 130, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(184, 151, 130, 0.15);
+        }
+
+        .nail-image-wrapper {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            background-color: var(--nude-light);
+        }
+
+        .nail-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .nail-card:hover .nail-image-wrapper img {
+            transform: scale(1.04);
+        }
+
+        .nail-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .nail-info h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+            margin-bottom: 10px;
+        }
+
+        .nail-info p {
+            font-size: 0.95rem;
+            color: #5a504a;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-align: justify;
+            flex-grow: 1;
+        }
+
+        .price-notice {
+            font-size: 0.88rem;
+            color: var(--nude-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-top: 1px dashed var(--nude-medium);
+            padding-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .btn-quote {
+            display: block;
+            text-align: center;
+            background-color: var(--pink-soft);
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-quote:hover {
+            background-color: #e8b0b8;
+        }
+
+        /* ==========================================================================
+           SECCIÓN DE TESTIMONIOS (CLIENTES SATISFECHOS)
+           ========================================================================== */
+        .testimonials-section {
+            background-color: var(--pink-blush);
+            padding: 80px 20px;
+            border-top: 1px solid var(--nude-light);
+        }
+
+        .testimonials-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .testimonials-header h2 {
+            font-size: 2.2rem;
+            color: var(--text-dark);
+            font-family: 'Georgia', serif;
+        }
+
+        .testimonials-header p {
+            color: var(--nude-dark);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            margin-top: 5px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--pure-white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+            border-left: 4px solid var(--pink-soft);
+        }
+
+        .stars {
+            color: #f39c12;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            font-size: 0.95rem;
+            color: #5a504a;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .client-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .main-footer {
+            background-color: var(--nude-dark);
+            color: var(--pure-white);
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR (FIJA) -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo-area">
+                <img src="logo.png" alt="Nails by Annie Logo">
+            </div>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Sobre nosotros</a></li>
+                    <li><a href="catalogo.html" class="active">Referencias</a></li>
+                    <li><a href="moodboard.html">Moodboard</a></li>
+                    <li><a href="organigrama.html">Organigrama</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ENCABEZADO DE LA GALERÍA -->
+    <section class="catalog-hero">
+        <h1>Galería de Referencias</h1>
+        <p>Inspiración para tu próximo set de ensueño</p>
+    </section>
+
+    <!-- CUADRÍCULA DE REFERENCIAS -->
+    <main class="container">
+        <div class="gallery-intro">
+            <h2>Nuestras Creaciones</h2>
+            <p>Explora algunas de las técnicas y estructuras artísticas realizadas. Recuerda que cada set se adapta por completo al largo, forma y decoración que tú elijas.</p>
+        </div>
+
+        <div class="gallery-grid">
+            
+            <!-- Tarjeta 1: Imagen Superior Izquierda de image_872319.png -->
+            <div class="nail-card">
+                <div class="nail-image-wrapper">
+                    <img src="u1.png" alt="Set Glam Extravagante">
+                </div>
+                <div class="nail-info">
+                    <h3>Set Glam Cristal</h3>
+                    <p>Estructura extra larga de punta cuadrada con una base nude traslúcida impecable. Destaca por su detallada joyería en relieve, estoperoles brillantes alineados y un dije central metálico en forma de cruz de pedrería fina.</p>
+                    <span class="price-notice">Evaluación en cita</span>
+                    <a href="#" class="btn-quote">Cotizar mi set</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Imagen Superior Derecha de image_872319.png -->
+            <div class="nail-card">
+                <div class="nail-image-wrapper">
+                    <img src="u2.png" alt="Set Destellos Naturales">
+                </div>
+                <div class="nail-info">
+                    <h3>Encapsulado Glitz</h3>
+                    <p>Set de acrílico alargado con un sutil difuminado (Baby Boomer) que transiciona de forma perfecta a puntas blancas suaves. Adornado delicadamente con destellos dorados encapsulados cerca de la cutícula para un brillo natural.</p>
+                    <span class="price-notice">Evaluación en cita</span>
+                    <a href="#" class="btn-quote">Cotizar mi set</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Imagen Inferior Izquierda de image_872319.png -->
+            <div class="nail-card">
+                <div class="nail-image-wrapper">
+                    <img src="u3.png" alt="Set French Rojo Pasión">
+                </div>
+                <div class="nail-info">
+                    <h3>French Intenso & Relieve</h3>
+                    <p>Diseño audaz con técnica de reversa limpia y puntas estilo francés en tono rojo carmín brillante. Incluye una uña acentuada en color blanco sólido que enmarca un fino marco dorado texturizado con pedrería miniatura.</p>
+                    <span class="price-notice">Evaluación en cita</span>
+                    <a href="#" class="btn-quote">Cotizar mi set</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 4: Imagen Inferior Derecha de image_872319.png -->
+            <div class="nail-card">
+                <div class="nail-image-wrapper">
+                    <img src="u4.png" alt="Set Coquette Velvet">
+                </div>
+                <div class="nail-info">
+                    <h3>Velvet & Gold Accents</h3>
+                    <p>Combinación artística de texturas que mezcla tonos rosa viejo y nudes profundos de cobertura total. Cuenta con una uña texturizada con líneas orgánicas cromadas en oro y otra en acabado mate con patrones abstractos.</p>
+                    <span class="price-notice">Evaluación en cita</span>
+                    <a href="#" class="btn-quote">Cotizar mi set</a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 5: Imagen completa de image_8722fb.png -->
+            <div class="nail-card">
+                <div class="nail-image-wrapper">
+                    <img src="u5.png" alt="Set Sanrio Hello Kitty Concept">
+                </div>
+                <div class="nail-info">
+                    <h3>Hello Kitty & Cherries Concept</h3>
+                    <p>Estructura Coquette extra larga con base cristalina y nudes suaves. Presenta un patrón divertido de minicorazones rosas, una uña con cerezas encapsuladas con tallos verdes vibrantes, trazos abstractos de glitter y un sticker icónico de Hello Kitty en la punta.</p>
+                    <span class="price-notice">Evaluación en cita</span>
+                    <a href="#" class="btn-quote">Cotizar mi set</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- SECCIÓN DE COMENTARIOS DE CLIENTAS -->
+    <section class="testimonials-section">
+        <div class="testimonials-container">
+            <div class="testimonials-header">
+                <h2>Opiniones de Nuestras Clientas</h2>
+                <p>Experiencias Nails by Annie</p>
+            </div>
+
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Me encantó el trato y la paciencia que tienen para recrear los diseños exactamente como se los pides. Mi set de Hello Kitty quedó súper resistente y hermoso."</p>
+                    <span class="client-name">— Mariana G.</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"La mejor atención en Reynosa. Los materiales que usan se sienten súper seguros y de excelente calidad. Mis amigas quedaron encantadas con el brillo de la pedrería."</p>
+                    <span class="client-name">— Sofía R.</span>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Fui por un manicure con encapsulado y salí fascinada. Te asesoran increíble durante la cita para elegir el largo perfecto que se adapte a tus manos."</p>
+                    <span class="client-name">— Valeria T.</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Nails by Annie — Detalles que enamoran.</p>
+    </footer>
+
+</body>
+</html>
