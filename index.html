@@ -87,31 +87,38 @@
         }
 
         /* ==========================================================================
-           SECCIÓN HERO (BIENVENIDA)
+           SECCIÓN HERO (BANNER CON IMAGEN EDITABLE)
            ========================================================================== */
         .hero-section {
-            background: linear-gradient(135deg, var(--pink-blush) 0%, var(--nude-light) 100%);
+            /* Vinculación directa a tu imagen editable */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), url('banner.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: var(--text-dark);
-            padding: 80px 20px;
+            padding: 100px 20px; /* Un poco más de espacio para que luzca el banner */
             text-align: center;
             border-bottom: 1px solid var(--nude-medium);
         }
 
         .hero-section h1 {
-            font-size: 3.2rem;
+            font-size: 3.5rem;
             letter-spacing: 2px;
-            color: var(--nude-dark);
+            color: var(--text-dark);
             margin-bottom: 15px;
-            font-weight: 400;
-            font-family: 'Georgia', serif; /* Un toque más estético para el rubro de belleza */
+            font-weight: 600;
+            font-family: 'Georgia', serif;
+            /* Sombra sutil para asegurar lectura sobre cualquier diseño de banner */
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8); 
         }
 
         .hero-section p {
-            font-size: 1.1rem;
-            font-weight: 400;
+            font-size: 1.15rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: #7a685c;
+            color: #5a504a;
+            text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
         }
 
         /* ==========================================================================
@@ -210,7 +217,6 @@
     <header class="navbar">
         <div class="nav-container">
             <div class="logo-area">
-                <!-- Espacio libre para logo.png como siempre -->
                 <img src="logo.png" alt="Nails by Annie Logo">
             </div>
             <nav>
@@ -224,7 +230,7 @@
         </div>
     </header>
 
-    <!-- BIENVENIDA DE LA MARCA -->
+    <!-- BIENVENIDA DE LA MARCA CON BANNER CONFIGURABLE -->
     <section class="hero-section">
         <h1>Nails by Annie</h1>
         <p>Belleza, Confianza y Satisfacción en tus manos</p>
