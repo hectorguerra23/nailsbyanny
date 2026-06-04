@@ -16,7 +16,7 @@
             --pink-blush: #fae8eb;        /* Fondo rosa sumamente tierno */
             --pure-white: #ffffff;
             --text-dark: #3a322d;         /* Marrón oscuro para legibilidad */
-            --alert-gold: #dfa241;        /* Color elegante para estados en proceso */
+            --pink-accent: #f28b9f;       /* Rosa intenso para resaltar jerarquías */
         }
 
         * {
@@ -117,99 +117,146 @@
         }
 
         /* ==========================================================================
-           CONTENEDOR PRINCIPAL Y EXPLICACIÓN
+           ESTRUCTURA DEL ORGANIGRAMA INTERACTIVO
            ========================================================================== */
-        .container {
-            max-width: 900px;
+        .org-container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 60px 20px;
-        }
-
-        .status-badge {
-            display: inline-block;
-            background-color: var(--pink-blush);
-            border: 1px solid var(--alert-gold);
-            color: #b37410;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 20px;
-        }
-
-        .content-block {
             text-align: center;
+        }
+
+        .org-intro {
             margin-bottom: 50px;
         }
 
-        .content-block h2 {
+        .org-intro h2 {
             font-size: 2.2rem;
             color: var(--text-dark);
-            margin-bottom: 20px;
             font-family: 'Georgia', serif;
+            margin-bottom: 10px;
         }
 
-        .explanation-card {
-            background-color: var(--nude-light);
-            border-left: 5px solid var(--nude-dark);
-            padding: 30px;
-            border-radius: 4px;
-            text-align: justify;
-            margin-bottom: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-        }
-
-        .explanation-card p {
+        .org-intro p {
             font-size: 1.05rem;
-            color: #5a504a;
-            line-height: 1.8;
-            margin-bottom: 15px;
+            color: #6e6158;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
-        .explanation-card p:last-child {
-            margin-bottom: 0;
+        /* Bloques de niveles jerárquicos estilo ReModa */
+        .org-level {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        /* Tarjeta de miembro del equipo */
+        .team-card {
+            background-color: var(--pure-white);
+            border: 1px solid var(--nude-light);
+            border-radius: 10px;
+            width: 260px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(184, 151, 130, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(184, 151, 130, 0.15);
+        }
+
+        .img-wrapper {
+            width: 100%;
+            height: 200px;
+            background-color: var(--pink-blush);
+            overflow: hidden;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-info {
+            padding: 15px;
+            background: var(--pure-white);
+        }
+
+        .member-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .member-role {
+            font-size: 0.85rem;
+            color: var(--pure-white);
+            background-color: var(--pink-accent);
+            padding: 4px 12px;
+            border-radius: 50px;
+            display: inline-block;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Variaciones de color por jerarquía */
+        .ceo-card .member-role {
+            background-color: #e56b81;
+            font-size: 0.9rem;
+            padding: 6px 16px;
+        }
+        
+        .sub-ceo-card .member-role {
+            background-color: var(--nude-dark);
+        }
+
+        /* Líneas conectoras visuales sencillas */
+        .level-title {
+            width: 100%;
+            font-size: 0.85rem;
+            color: var(--nude-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--nude-light);
+            padding-bottom: 5px;
         }
 
         /* ==========================================================================
-           CONTENEDOR DE ESPACIO RESERVADO PARA EL ESQUEMA (CON ANIMACIÓN)
+           SECCIÓN DE RESPALDO DE LA IMAGEN COMPLETA (M.JPG)
            ========================================================================== */
-        .placeholder-box {
-            border: 2px dashed var(--nude-medium);
-            background-color: #faf8f6;
-            border-radius: 12px;
+        .original-map-section {
+            background-color: var(--pink-blush);
             padding: 60px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
+            text-align: center;
+            border-top: 1px solid var(--nude-light);
         }
 
-        .gear-icon {
-            font-size: 3.5rem;
-            color: var(--nude-dark);
-            margin-bottom: 20px;
-            animation: spin 4s linear infinite;
+        .map-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: var(--pure-white);
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
         }
 
-        @keyframes spin {
-            100% { transform: rotate(360deg); }
-        }
-
-        .placeholder-box h3 {
-            font-size: 1.4rem;
-            color: var(--text-dark);
-            margin-bottom: 10px;
-            font-weight: 600;
-        }
-
-        .placeholder-box p {
-            font-size: 0.95rem;
-            color: #7a6e65;
-            max-width: 500px;
-            line-height: 1.5;
+        .map-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 6px;
         }
 
         /* ==========================================================================
@@ -222,7 +269,6 @@
             padding: 40px 20px;
             font-size: 0.9rem;
             letter-spacing: 1px;
-            margin-top: 40px;
         }
     </style>
 </head>
@@ -245,35 +291,173 @@
         </div>
     </header>
 
-    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <!-- ENCABEZADO -->
     <section class="org-hero">
-        <h1>Estructura Organizacional</h1>
-        <p>Nuestro equipo y distribución de funciones</p>
+        <h1>Nuestra Estructura</h1>
+        <p>Talento y organización detrás de cada diseño</p>
     </section>
 
-    <!-- EXPLICACIÓN Y ESTADO DE LA SECCIÓN -->
-    <main class="container">
-        <div class="content-block">
-            <span class="status-badge">Fase: En Proceso</span>
-            <h2>Distribución de Roles en Desarrollo</h2>
+    <!-- CONTENEDOR DEL ORGANIGRAMA ESTRUCTURADO -->
+    <main class="org-container">
+        <div class="org-intro">
+            <h2>Equipo de Trabajo de Nails by Annie</h2>
+            <p>Conoce a los especialistas dedicados a llevar la administración, el diseño artístico y la máxima calidad hasta tus manos.</p>
+        </div>
+
+        <!-- NIVEL 1: ALTA DIRECCIÓN -->
+        <div class="org-level">
+            <div class="level-title">Dirección General</div>
+            <div class="team-card ceo-card">
+                <div class="img-wrapper">
+                    <img src="anny.png" alt="Anny Santiago">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Anny Santiago</div>
+                    <span class="member-role">CEO</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 2: DIRECCIONES DE ÁREA -->
+        <div class="org-level">
+            <div class="level-title">Direcciones Departamentales</div>
             
-            <div class="explanation-card">
-                <p>
-                    Actualmente, el organigrama oficial de <strong>Nails by Annie</strong> se encuentra clasificado bajo el estado de <strong>En Proceso</strong>. Al tratarse de un emprendimiento en etapa de planeación estructural y lanzamiento de marca, el equipo fundador se encuentra operando bajo un esquema de <em>multifuncionalidad</em>, donde la administración general, el marketing digital y el control de insumos son gestionados de manera conjunta.
-                </p>
-                <p>
-                    La asignación definitiva de las plazas operativas (tales como Técnicas Aplicadoras Senior, Especialistas en Manicure Avanzado, Auxiliares de Almacén y Encargadas de Recepción) se formalizará una vez que se inicie el periodo de reclutamiento técnico y las evaluaciones presenciales en la cita de apertura. Este enfoque modular garantiza que cada puesto sea asignado bajo estrictos estándares de calidad y destreza artística.
-                </p>
+            <div class="team-card sub-ceo-card">
+                <div class="img-wrapper">
+                    <img src="camila.png" alt="Camila González">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Camila González</div>
+                    <span class="member-role">Área de Diseño</span>
+                </div>
             </div>
 
-            <!-- CUADRO VISUAL QUE REEMPLAZARÁ AL GRÁFICO TEMPORALMENTE -->
-            <div class="placeholder-box">
-                <div class="gear-icon">⚙️</div>
-                <h3>Esquema Técnico en Actualización</h3>
-                <p>El diseño gráfico del organigrama estructural e interacciones departamentales se desplegará en este espacio una vez concluidas las fases de asignación de roles técnicos.</p>
+            <div class="team-card sub-ceo-card">
+                <div class="img-wrapper">
+                    <img src="hector.png" alt="Héctor Guerra">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Héctor Guerra</div>
+                    <span class="member-role">Área de Marketing</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 3: OPERACIÓN Y LOGÍSTICA -->
+        <div class="org-level">
+            <div class="level-title">Especialistas, Administración y Logística</div>
+            
+            <!-- Bloque de Diseño Técnico -->
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="mayreli.png" alt="Mayreli Sánchez">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Mayreli Sánchez</div>
+                    <span class="member-role">Esmaltado y Diseño</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="atalia.png" alt="Atalia Estefanía">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Atalia Estefanía</div>
+                    <span class="member-role">Diseño y Pedrería</span>
+                </div>
+            </div>
+
+            <!-- Bloque de Administración y Materiales -->
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="giovanni.png" alt="Giovanni García">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Giovanni García</div>
+                    <span class="member-role">Área Financiera</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="jesus.png" alt="Jesús Rubio">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Jesús Rubio</div>
+                    <span class="member-role">Adm. de Citas</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="carlos.png" alt="Carlos Daniel">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Carlos Daniel</div>
+                    <span class="member-role">Encargado de Material</span>
+                </div>
+            </div>
+
+            <!-- Bloque de Redes y Publicidad (Marketing) -->
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="daniel.png" alt="Daniel Jiménez">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Daniel Jiménez</div>
+                    <span class="member-role">Adm. de Redes Sociales</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="dahana.png" alt="Dahana García">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Dahana García</div>
+                    <span class="member-role">Publicidad Digital</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- NIVEL 4: CALIDAD Y ASISTENCIA -->
+        <div class="org-level">
+            <div class="level-title">Calidad y Soporte General</div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="yuliana.png" alt="Yuliana Gutiérrez">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Yuliana Gutiérrez</div>
+                    <span class="member-role">Área de Calidad</span>
+                </div>
+            </div>
+
+            <div class="team-card">
+                <div class="img-wrapper">
+                    <img src="marcos.png" alt="Marcos García">
+                </div>
+                <div class="member-info">
+                    <div class="member-name">Marcos García</div>
+                    <span class="member-role">Ayudante General</span>
+                </div>
             </div>
         </div>
     </main>
+
+    <!-- SECCIÓN DE RESPALDO DEL GRÁFICO ORIGINAL (m.jpg) -->
+    <section class="original-map-section">
+        <div class="org-intro">
+            <h3>Mapa Estructural Gráfico</h3>
+            <p style="margin-bottom: 20px;">Esquema visual completo de la distribución interna de la empresa.</p>
+        </div>
+        <div class="map-wrapper">
+            <!-- Cargamos tu imagen m.jpg directamente abajo como respaldo estético -->
+            <img src="m.jpg" alt="Mapa de Organización Completo - Nails by Annie">
+        </div>
+    </section>
 
     <!-- PIE DE PÁGINA -->
     <footer class="main-footer">
